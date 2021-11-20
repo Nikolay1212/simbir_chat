@@ -1,0 +1,118 @@
+POST localhost:8080/signIn
+Content-Type: application/json
+
+{
+  "email" : "admin@mail.com",
+  "password" : "12345"
+}
+
+###
+
+GET localhost:8080/room
+Content-Type: application/json
+
+{
+  "title" : "DEFAULT ROOM",
+  "roomType" : "DEFAULT"
+}
+
+###
+
+POST localhost:8080/account/registration
+Content-Type: application/json
+
+{
+  "firstName": "ADMIN_1",
+  "lastName": "ADMIN_1_LAST",
+  "hashPassword": "ADMIN_1_PASSWORD",
+  "role" : "ADMIN",
+  "state" : "CONFIRMED"
+}
+
+###
+
+POST localhost:8080/account/registration
+Content-Type: application/json
+
+{
+  "firstName": "ADMIN_2",
+  "lastName": "ADMIN_2_LAST",
+  "hashPassword": "ADMIN_2_PASSWORD",
+  "role" : "ADMIN",
+  "state" : "CONFIRMED"
+}
+
+###
+
+POST localhost:8080/account/registration
+Content-Type: application/json
+
+{
+  "firstName": "USER_1",
+  "lastName": "USER_1_LAST",
+  "hashPassword": "USER_1_PASSWORD",
+  "role" : "USER",
+  "state" : "CONFIRMED"
+}
+
+###
+
+POST localhost:8080/account/registration
+Content-Type: application/json
+
+{
+  "firstName": "USER_2",
+  "lastName": "USER_2_LAST",
+  "hashPassword": "USER_2_PASSWORD",
+  "role" : "USER",
+  "state" : "CONFIRMED"
+}
+
+###
+
+GET localhost:8080/account/authorization
+Content-Type: application/json
+
+{
+  "firstName": "USER_2",
+  "lastName": "USER_2_LAST",
+  "hashPassword": "USER_2_PASSWORD",
+  "role" : "USER",
+  "state" : "CONFIRMED"
+}
+
+###
+
+GET localhost:8080/account/ban/2
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwicm9sZSI6IkFETUlOIiwic3RhdGUiOiJDT05GSVJNRUQiLCJlbWFpbCI6ImFkbWluQG1haWwuY29tIn0.3EgcwWsuI2__ThcEbWEzXAKxImGYGoVF4IpG0DSLGbA
+
+###
+
+GET localhost:8080/account/unban/2
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwicm9sZSI6IkFETUlOIiwic3RhdGUiOiJDT05GSVJNRUQiLCJlbWFpbCI6ImFkbWluQG1haWwuY29tIn0.3EgcwWsuI2__ThcEbWEzXAKxImGYGoVF4IpG0DSLGbA
+
+###
+
+GET localhost:8080/message/receive
+Content-Type: application/json
+
+{
+  "content" : "Message from Admin",
+  "sender_id" : 1,
+  "room_id" : 1
+}
+
+###
+
+GET localhost:8080/message/send/2
+Content-Type: application/json
+
+{
+"content" : "Hello, World!",
+"sender_id" : 2,
+"room_id" : 1
+}
+
+###
+
+DELETE localhost:8080/message/delete/1
